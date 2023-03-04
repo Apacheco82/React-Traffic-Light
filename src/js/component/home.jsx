@@ -8,6 +8,7 @@ const Home = () => {
     ambar: "",
     verde: "",
   });
+const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     setColor({rojo: "brillo"});
@@ -16,7 +17,15 @@ const Home = () => {
   return (
   <>  <div className="container">
 
-
+{visible && <div id="purple" className={"purpura " + color.purpura}  onClick={() =>
+      setColor({
+        purpura: "brillo-purpura",
+        rojo: "",
+        ambar: "",
+        verde: "",
+      })
+    }></div>}
+     
   <div
     className={"rojo " + color.rojo}
     onClick={() =>
@@ -51,7 +60,12 @@ const Home = () => {
     }
   ></div>
 </div>
-
+<button onClick={() => {
+        setVisible(!visible);
+        setClassName(visible ? 'hidden' : 'purple');
+      }}>
+        {visible ? 'Hide new color' : 'Show new color'}
+      </button>
 </>
       
 
