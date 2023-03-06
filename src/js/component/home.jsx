@@ -8,11 +8,14 @@ const Home = () => {
     ambar: "",
     verde: "",
   });
-const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setColor({rojo: "brillo"});
+    setColor({rojo: "brillo-rojo"});
   }, []);
+
+const [visible, setVisible] = useState(false);
+
+
 
   return (
   <>  <div className="container">
